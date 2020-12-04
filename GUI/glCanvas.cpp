@@ -13,13 +13,13 @@
 #include "common/toolsOperation.h"
 
 #include <QMouseEvent>
-#include "QGLviewer/camera.h"
+#include "QGLViewer/camera.h"
 #include "GUI/glUtils.h"
 #include "Eigen/Eigen"
-#include "QGLviewer/vec.h"
+#include "QGLViewer/vec.h"
 #include "geom/plane.h"
 #include "math/quaternion.h"
-#include "QGLviewer/manipulatedCameraFrame.h"
+#include "QGLViewer/manipulatedCameraFrame.h"
 #include "animation/animator.h"
 
 #include <iostream>

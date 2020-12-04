@@ -31,3 +31,11 @@
 *.out
 *.app
 cagelab2018.pro.user
+/Cagelab2018
+
+# QMake generated files
+.qmake.stash
+/Makefile
+
+# 3rd party dependencies
+/3rd_party

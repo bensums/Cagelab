@@ -113,12 +113,12 @@ RESOURCES += \
 #LIBS += -LC:/Users/login/Documents/libQGLViewer-2.6.4/QGLViewer -lQGLViewer2
 
 # Linux
-#INCLUDEPATH += /home/login/Documents/libQGLViewer-2.6.4
-#LIBS += -L/home/login/libQGLViewer-2.6.4/QGLViewer -lQGLViewer
+INCLUDEPATH += $$(PWD)/3rd_party/libQGLViewer
+LIBS *= -L'$$(PWD)/3rd_party/libQGLViewer/QGLViewer/' -l'QGLViewer-qt5'
 
 # Mac
-macx: INCLUDEPATH += /Library/Frameworks/QGLViewer.framework/Headers
-macx: LIBS += -F/Library/Frameworks -framework QGLViewer
+#macx: INCLUDEPATH += /Library/Frameworks/QGLViewer.framework/Headers
+#macx: LIBS += -F/Library/Frameworks -framework QGLViewer
 
 ## End libQGLViewer configurations
 
@@ -126,8 +126,12 @@ macx: LIBS += -F/Library/Frameworks -framework QGLViewer
 ## LIB FBX configurations
 
 #Mac
-macx: LIBS += -L'/Applications/Autodesk/FBX SDK/2018.1.1/lib/clang/release/' -lfbxsdk
-macx: INCLUDEPATH +='/Applications/Autodesk/FBX SDK/2018.1.1/include/'
+#macx: LIBS += -L'/Applications/Autodesk/FBX SDK/2018.1.1/lib/clang/release/' -lfbxsdk
+#macx: INCLUDEPATH +='/Applications/Autodesk/FBX SDK/2018.1.1/include/'
+
+# Linux
+LIBS += -L '$$(PWD)/3rd_party/fbxsdk/lib/gcc4/x64/release/' -l fbxsdk
+INCLUDEPATH += '$$(PWD)/3rd_party/fbxsdk/include/'
 
 ## End FBX configurations
 
@@ -135,7 +139,10 @@ macx: INCLUDEPATH +='/Applications/Autodesk/FBX SDK/2018.1.1/include/'
 ## LIB Eigen configurations
 
 # Mac
-macx: INCLUDEPATH += /libs/include/eigen
+#macx: INCLUDEPATH += /libs/include/eigen
+
+# Linux
+INCLUDEPATH += $$(PWD)/3rd_party/eigen
 
 ## End Eigen configurations
 
@@ -143,8 +150,13 @@ macx: INCLUDEPATH += /libs/include/eigen
 ## LIB glm configurations
 
 # Mac
-macx: INCLUDEPATH += /libs/include/glm
+#macx: INCLUDEPATH += /libs/include/glm
+
+# Linux
+INCLUDEPATH += $$(PWD)/3rd_party/glm
 
 ## End glm configurations
+
+LIBS += -lGLU
 
 #Icons are partially self-created, partially from https://material.io/tools/icons/
